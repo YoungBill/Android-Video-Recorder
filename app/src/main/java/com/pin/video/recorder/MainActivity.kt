@@ -1,5 +1,6 @@
 package com.pin.video.recorder
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     .runtime()
                     .permission(Permission.RECORD_AUDIO, Permission.CAMERA)
                     .onGranted {
+                        val intent = Intent(this@MainActivity, VideoCameraActivity::class.java)
+                        startActivityForResult(intent, 100)
                     }
                     .onDenied {
                         Toast.makeText(
