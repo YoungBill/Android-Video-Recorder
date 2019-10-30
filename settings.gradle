@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':video-recorder'
 rootProject.name='Android-Video-Recorder'
